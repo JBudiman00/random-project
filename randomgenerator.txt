@@ -9,6 +9,9 @@ def main():
     intCount = int(intCount)
     Randomlist = getRandomInts(lb, ub, intCount)
     print(Randomlist)
+    
+    print("For the next game, we'll be playing Russian roulette")
+    russianRoulette()
 
 def getRandomInts(lb, ub, amt):
     randomlist = []
@@ -17,4 +20,15 @@ def getRandomInts(lb, ub, amt):
     
     return randomlist
 
+def russianRoulette():
+    while (True):
+        num = input("Enter a number between 1 & 6 ")
+        chosen = random.randint(1, 6)
+        if chosen == int(num):
+            print("Game over! Pow, Pow")
+        else:
+            print("You survived, the number was " + str(chosen))
+            option = input("platy again? (yes/no) ")
+        if option == "no":
+            break
 main()
