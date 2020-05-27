@@ -1,0 +1,3 @@
+intCount = input("Enter the amount of random integers you want")
+lb = input("Enter the lower bound of the range of integers you would like")
+ub = input("Enter the upper bound of the range of integers you would like")
