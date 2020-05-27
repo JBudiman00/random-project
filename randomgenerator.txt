@@ -1,3 +1,20 @@
-intCount = input("Enter the amount of random integers you want")
-lb = input("Enter the lower bound of the range of integers you would like")
-ub = input("Enter the upper bound of the range of integers you would like")
+import random
+
+def main():
+    intCount = input("Enter the amount of random integers you want ")
+    lb = input("Enter the lower bound of the range of integers you would like ")
+    ub = input("Enter the upper bound of the range of integers you would like ")
+    lb = int(lb)
+    ub = int(ub)
+    intCount = int(intCount)
+    Randomlist = getRandomInts(lb, ub, intCount)
+    print(Randomlist)
+
+def getRandomInts(lb, ub, amt):
+    randomlist = []
+    for x in range(amt):
+        randomlist.append(random.randint(lb, ub))
+    
+    return randomlist
+
+main()
