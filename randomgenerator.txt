@@ -1,0 +1,34 @@
+import random
+
+def main():
+    intCount = input("Enter the amount of random integers you want ")
+    lb = input("Enter the lower bound of the range of integers you would like ")
+    ub = input("Enter the upper bound of the range of integers you would like ")
+    lb = int(lb)
+    ub = int(ub)
+    intCount = int(intCount)
+    Randomlist = getRandomInts(lb, ub, intCount)
+    print(Randomlist)
+    
+    print("For the next game, we'll be playing Russian roulette")
+    russianRoulette()
+
+def getRandomInts(lb, ub, amt):
+    randomlist = []
+    for x in range(amt):
+        randomlist.append(random.randint(lb, ub))
+    
+    return randomlist
+
+def russianRoulette():
+    while (True):
+        num = input("Enter a number between 1 & 6 ")
+        chosen = random.randint(1, 6)
+        if chosen == int(num):
+            print("Game over! Pow, Pow")
+        else:
+            print("You survived, the number was " + str(chosen))
+            option = input("platy again? (yes/no) ")
+        if option == "no":
+            break
+main()
